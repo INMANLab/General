@@ -1,0 +1,23 @@
+function get3DCoords(pID)
+% get3DCoords takes a patient ID as input (e.g., 'UIC202302') and exports the following:
+%   XYZ_MNI:    coordinates of electrode contacts in MNI space
+%   XYZ:        coordinates of electrode contacts in patient space
+%   vertices:   vertices for 3D model of patient brain
+%   faces:      faces for 3D model of patient brain
+
+ptPath = strcat('Z:\', pID, '\Imaging\Registered\');
+load(strcat(ptPath, 'Electrodes.mat')); % load electrode info
+load(strcat(ptPath, 'Surfaces.mat')); % load 3d model info
+
+XYZ_MNI     = ElecXYZMNIRaw;
+XYZ         = ElecXYZ;
+vertices    = BrainSurfRaw.vertices;
+faces       = BrainSurfRaw.faces;
+
+writematrix(XYZ_MNI, strcat(pID, '_XYZ_MNI.csv'));
+writematrix(XYZ, strcat(pID, '_XYZ_MNI.csv'));
+writematrix(fac, strcat(pID, '_XYZ_MNI.csv'));
+writematrix(XYZ_MNI, strcat(pID, '_XYZ_MNI.csv'));
+
+end
+
