@@ -41,10 +41,11 @@ def plotPtBrain(xyz, dPrime = None, faces = None, vertices = None, roi_smoothing
 
 ### IMPLEMENTATION
 import pandas as pd
-datapath = '/Users/justincampbell/Library/CloudStorage/GoogleDrive-u0815766@gcloud.utah.edu/My Drive/Research Projects/BLAES/Data/UIC202302/UIC202302_XYZ.csv'
-xyz = pd.read_csv(datapath).to_numpy()
-faces = pd.read_csv('/Users/justincampbell/Library/CloudStorage/GoogleDrive-u0815766@gcloud.utah.edu/My Drive/Research Projects/BLAES/Data/UIC202302/UIC202302_faces.csv')
-vertices = pd.read_csv('/Users/justincampbell/Library/CloudStorage/GoogleDrive-u0815766@gcloud.utah.edu/My Drive/Research Projects/BLAES/Data/UIC202302/UIC202302_vertices.csv')    
+datapath = '/Users/justincampbell/Library/CloudStorage/GoogleDrive-u0815766@gcloud.utah.edu/My Drive/Research Projects/BLAES/Data/3DBrains/'
+pID = 'UIC202302'
+xyz = pd.read_csv((datapath + pID + '_XYZ.csv')).to_numpy()
+faces = pd.read_csv((datapath + pID + '_faces.csv'))
+vertices = pd.read_csv((datapath + pID + '_vertices.csv'))
 
 if __name__ == "__main__":
     plotPtBrain(xyz, faces = faces, vertices = vertices) # patient brain
