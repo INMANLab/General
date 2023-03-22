@@ -17,8 +17,8 @@ load(strcat(ptPath, 'Electrodes.mat')); % load electrode info
 load(strcat(ptPath, 'Surfaces.mat')); % load 3d model info
 
 % Extract coordinates
-XYZ_MNI     = ElecXYZMNIRaw;
-XYZ         = ElecXYZRaw;
+XYZ_MNI     = ElecXYZMNIProjRaw;
+XYZ         = ElecXYZProjRaw;
 vertices    = BrainSurfRaw.vertices;
 faces       = BrainSurfRaw.faces;
 
