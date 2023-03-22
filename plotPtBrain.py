@@ -33,15 +33,7 @@ def plotPtBrain(xyz, dPrime = None, faces = None, vertices = None, roi_smoothing
     scene_obj.add_to_subplot(roiHC, row=0, col=0)
     
     # Source object(s)
-    if dPrime is not None:
-        iEEG_obj = SourceObj('iEEG', xyz, radius_min = elec_size, edge_color = 'black', edge_width = 0.5)
-        iEEG_obj.color_sources(data = dPrime, cmap = 'coolwarm')
-        # Colorbar object
-        CBAR_STATE = dict(cbtxtsz=15, txtsz=10, txtcolor = 'black', width=.1, cbtxtsh=3., rect=(-.3, -2., 1., 4.), clim = (dPrime.min(),dPrime.max()))
-        cbar_obj = ColorbarObj(iEEG_obj, cblabel="d' Difference", **CBAR_STATE)
-        scene_obj.add_to_subplot(cbar_obj, row=0, col=1, width_max=200)
-    else:
-        iEEG_obj = SourceObj('iEEG', xyz, color = (['#000000'] * len(xyz)), radius_min = elec_size) # All black
+    iEEG_obj = SourceObj('iEEG', xyz, color = (['#000000'] * len(xyz)), radius_min = elec_size) # All black
     scene_obj.add_to_subplot(iEEG_obj)
 
     # Preview
