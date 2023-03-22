@@ -1,4 +1,4 @@
-def plotBLAESStim(xyz, dPrime = None, faces = None, vertices = None, roi_smoothing = 8, elec_size = 20, show_brain = True):
+def plotBLAESStim(xyz, dPrime = None, roi_smoothing = 8, elec_size = 20, show_brain = True):
     """plotBLAESStim() uses the visbrain package (visbrain.org) to generate a 3D model of an MNI brain w/ electrode contacts superimposed. Electrode locations (MNI XYZ coordinates) are defined in each patient's CSMap.mat file.
 
     Inputs:
