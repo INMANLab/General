@@ -47,9 +47,8 @@ def plotBLAESStim(xyz, dPrime = None, roi_smoothing = 8, elec_size = 20, show_br
 
 ### IMPLEMENTATION
 import pandas as pd
-datapath = '/Users/justincampbell/Library/CloudStorage/GoogleDrive-u0815766@gcloud.utah.edu/My Drive/Research Projects/BLAES/Data/3DBrains/'
-cohortFile = 'BLAESCoords 021523.csv'
-BLAESCoords = pd.read_csv((datapath + cohortFile))
+datapath = '/Users/justincampbell/Library/CloudStorage/GoogleDrive-u0815766@gcloud.utah.edu/My Drive/Research Projects/BLAES/Data/3DBrains/BLAESCoords 021523.csv'
+BLAESCoords = pd.read_csv(datapath)
 xyz = BLAESCoords[['X', 'Y', 'Z']].to_numpy()
 dPrime = BLAESCoords['dPrimeDiff_Item'].to_numpy()
 
