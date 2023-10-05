@@ -49,4 +49,3 @@ vertices = pd.read_csv((datapath + pID + '_vertices.csv'))
 
 if __name__ == "__main__":
     plotPtBrain(xyz, faces = faces, vertices = vertices) # patient brain
-    
